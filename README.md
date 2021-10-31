@@ -24,7 +24,7 @@ The following **extensions** are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/a59xhXQ.mp4' title='Video
+<img src='https://i.imgur.com/a59xhXQ.gif' title='Video
 Walkthrough' width='' alt='Video Walkthrough' />
 
 Recorded with QuickTimePlayer and converted to GIF with
@@ -36,7 +36,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [2021] [Megan Liu]
+    Copyright 2021 Megan Liu
 
         Licensed under the Apache License, Version 2.0 (the "License");
             you may not use this file except in compliance with the License.
