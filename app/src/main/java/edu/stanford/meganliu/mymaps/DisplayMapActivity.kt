@@ -3,6 +3,8 @@ package edu.stanford.meganliu.mymaps
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -10,14 +12,12 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
-import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import edu.stanford.meganliu.mymaps.databinding.ActivityDisplayMapBinding
 import edu.stanford.meganliu.mymaps.models.UserMap
 
 private const val TAG = "DisplayMapActivity"
 class DisplayMapActivity : AppCompatActivity(), OnMapReadyCallback {
-
+    private var mapTerrain = false;
     private lateinit var mMap: GoogleMap
     private lateinit var userMap: UserMap
     //private lateinit var binding: ActivityDisplayMapBinding
@@ -35,7 +35,43 @@ class DisplayMapActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_display_map, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.absMapType) {
+            Log.i(TAG, "Tapped on map type submenu!")
+            return true
+        }
+        if(item.itemId == R.id.radio_normal) {
+            Log.i(TAG, "Tapped on normal map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            return true
+        }
+        if(item.itemId == R.id.radio_satellite) {
+            Log.i(TAG, "Tapped on satellite map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            return true
+        }
+        if(item.itemId == R.id.radio_terrain) {
+            Log.i(TAG, "Tapped on satellite map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+            return true
+        }
+        if(item.itemId == R.id.radio_hybrid) {
+            Log.i(TAG, "Tapped on satellite map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            return true
+        }
+        if(item.itemId == R.id.radio_none) {
+            Log.i(TAG, "Tapped on none map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_NONE);
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.

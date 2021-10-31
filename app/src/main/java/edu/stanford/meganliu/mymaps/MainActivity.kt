@@ -38,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         rvMaps = findViewById(R.id.rvMaps)
         fabCreateMap = findViewById(R.id.fabCreateMap)
         userMaps = deserializeUserMaps(this).toMutableList()
+        if (userMaps.isEmpty()){
+            userMaps = generateSampleData().toMutableList();
+        }
         //set layout manager on recycler view
         rvMaps.layoutManager = LinearLayoutManager(this)
         //set adapter on the recycler view

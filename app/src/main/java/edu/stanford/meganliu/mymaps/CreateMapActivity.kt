@@ -28,6 +28,7 @@ import edu.stanford.meganliu.mymaps.models.UserMap
 
 private const val TAG = "CreateMapActivity"
 class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
+    private var mapTerrain = false;
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityCreateMapBinding
 
@@ -54,7 +55,7 @@ class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-       menuInflater.inflate(R.menu.menu_create_map, menu)
+        menuInflater.inflate(R.menu.menu_create_map, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -64,6 +65,7 @@ class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
             Log.i(TAG, "Tapped on save!")
             if(markers.isEmpty()){
                 Toast.makeText(this,"There must be at least one marker on the map", Toast.LENGTH_LONG).show()
+                return true
             }
             val places = markers.map{marker-> Place(marker.title, marker.snippet, marker.position.latitude, marker.position.longitude) }
             val userMap = intent.getStringExtra(EXTRA_MAP_TITLE)?.let { UserMap(it, places) }
@@ -73,6 +75,35 @@ class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
             )
             setResult(Activity.RESULT_OK, data)
             finish()
+            return true
+        }
+        if(item.itemId == R.id.absMapType) {
+            Log.i(TAG, "Tapped on map type submenu!")
+            return true
+        }
+        if(item.itemId == R.id.radio_normal) {
+            Log.i(TAG, "Tapped on normal map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            return true
+        }
+        if(item.itemId == R.id.radio_satellite) {
+            Log.i(TAG, "Tapped on satellite map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            return true
+        }
+        if(item.itemId == R.id.radio_terrain) {
+            Log.i(TAG, "Tapped on satellite map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+            return true
+        }
+        if(item.itemId == R.id.radio_hybrid) {
+            Log.i(TAG, "Tapped on satellite map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            return true
+        }
+        if(item.itemId == R.id.radio_none) {
+            Log.i(TAG, "Tapped on none map type")
+            mMap.setMapType(GoogleMap.MAP_TYPE_NONE);
             return true
         }
         return super.onOptionsItemSelected(item)
@@ -94,7 +125,6 @@ class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.setOnMapLongClickListener { latLng->
             Log.i(TAG, "onMapLongClickListener")
             showAlertDialog(latLng)
-
         }
         // Add a marker in silicon Valley and move the camera
         val siliconValley = LatLng(37.4, -122.1)

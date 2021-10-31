@@ -10,7 +10,9 @@
         <entry key="app/src/main/res/layout/dialog_create_map.xml" value="0.12604166666666666" />
         <entry key="app/src/main/res/layout/dialog_create_place.xml" value="0.1515625" />
         <entry key="app/src/main/res/layout/item_user_map.xml" value="0.2249786376953125" />
+        <entry key="app/src/main/res/layout/switch_item.xml" value="0.17395833333333333" />
         <entry key="app/src/main/res/menu/menu_create_map.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/menu_display_map.xml" value="0.17395833333333333" />
       </map>
     </option>
   </component>
