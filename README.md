@@ -1,5 +1,3 @@
-ps 
-
 ## *Megan Liu*
 
 **My Maps** displays a list of maps, each of which show user-defined markers
@@ -24,7 +22,7 @@ The following **extensions** are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/a59xhXQ.gif' title='Video
+<img src='https://imgur.com/S4onzKD.gif' title='Video
 Walkthrough' width='' alt='Video Walkthrough' />
 
 Recorded with QuickTimePlayer and converted to GIF with
