@@ -1,6 +1,6 @@
 ps 
 
-## *Your name here*
+## *Megan Liu*
 
 **My Maps** displays a list of maps, each of which show user-defined markers
 with a title, description, and location. The user can also create a new map. 
@@ -24,10 +24,11 @@ The following **extensions** are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video
+<img src='https://i.imgur.com/a59xhXQ.mp4' title='Video
 Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+Recorded with QuickTimePlayer and converted to GIF with
+[EZGIF.COM](https://ezgif.com/).
 
 ## Notes
 
