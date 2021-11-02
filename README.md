@@ -24,6 +24,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://imgur.com/S4onzKD.gif' title='Video
 Walkthrough' width='' alt='Video Walkthrough' />
+https://imgur.com/S4onzKD.gif
 
 Recorded with QuickTimePlayer and converted to GIF with
 [EZGIF.COM](https://ezgif.com/).
